@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 19 avr. 2022 à 09:46
+-- Généré le : mar. 19 avr. 2022 à 14:13
 -- Version du serveur : 8.0.27
 -- Version de PHP : 7.4.26
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `abonnement` enum('premium','vip','classique','') NOT NULL,
   `interet` set('sport','cinéma','musique','') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `clients`
@@ -56,15 +56,15 @@ INSERT INTO `clients` (`id`, `nom`, `telephone`, `abonnement`, `interet`) VALUES
 DROP TABLE IF EXISTS `fournisseurs`;
 CREATE TABLE IF NOT EXISTS `fournisseurs` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(128) NOT NULL,
+  `nom_fournisseur` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `fournisseurs`
 --
 
-INSERT INTO `fournisseurs` (`id`, `nom`) VALUES
+INSERT INTO `fournisseurs` (`id`, `nom_fournisseur`) VALUES
 (24, 'tunisie telecom'),
 (23, 'orange'),
 (22, 'ooredoo');
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `produits` (
   `marque` varchar(128) NOT NULL,
   `ref_fournisseur` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `produits`
@@ -93,7 +93,7 @@ INSERT INTO `produits` (`id`, `no`, `type`, `marque`, `ref_fournisseur`) VALUES
 (1, 'téléphone', 'éléctronique', 'samsung', 23),
 (2, 'smartwatch', 'éléctronique', 'huawei', 22),
 (6, 'protége ecran', 'protection', 'NA', 24),
-(5, 'airpods', 'electronique', 'iphone', 24);
+(5, 'airpods', 'éléctronique', 'iphone', 24);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
