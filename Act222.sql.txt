@@ -1,0 +1,5 @@
+SELECT offerName, unitPriceTTC, quantity, totalTTC FROM offer , quotationcontent , quotation
+WHERE quotationcontent.id_quotation=quotation.id AND quotationcontent.id_offer=offer.id AND quotation.id = 10;
+
+SELECT quotation.id, firstname , lastname , email FROM quotation,user
+WHERE quotation.id_user= user.id AND (user.email LIKE '%gmail.com%' OR user.email LIKE '%GMAIL.COM%');
